@@ -1,10 +1,10 @@
 <?php
 
-namespace Tualo\Connect\AI;
+namespace Tualo\ConnectAI\AI;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Tualo\Connect\Exception\ConnectException;
+use Tualo\ConnectAI\Exception\ConnectException;
 
 class vLLM implements AIProvider
 {

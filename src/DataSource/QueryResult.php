@@ -1,6 +1,6 @@
 <?php
 
-namespace Tualo\Connect\DataSource;
+namespace Tualo\ConnectAI\DataSource;
 
 class QueryResult
 {

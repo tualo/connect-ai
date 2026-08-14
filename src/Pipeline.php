@@ -2,11 +2,11 @@
 
 namespace Tualo\Connect;
 
-use Tualo\Connect\AI\AIProvider;
-use Tualo\Connect\AI\AIResponse;
-use Tualo\Connect\AI\AIPrompt;
-use Tualo\Connect\DataSource\QueryResult;
-use Tualo\Connect\Exception\ConnectException;
+use Tualo\ConnectAI\AI\AIProvider;
+use Tualo\ConnectAI\AI\AIResponse;
+use Tualo\ConnectAI\AI\AIPrompt;
+use Tualo\ConnectAI\DataSource\QueryResult;
+use Tualo\ConnectAI\Exception\ConnectException;
 
 class Pipeline
 {

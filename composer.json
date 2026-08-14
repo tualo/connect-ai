@@ -1,5 +1,5 @@
 {
-     "name": "tualo/connect",
+     "name": "tualo/connect-ai",
      "description": "Generic multi-connector library for AI providers and data sources",
      "type": "library",
      "license": "MIT",

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tualo\Connect\Exception;
+namespace Tualo\ConnectAI\Exception;
 
 use Exception;
 

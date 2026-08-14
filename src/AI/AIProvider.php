@@ -1,6 +1,6 @@
 <?php
 
-namespace Tualo\Connect\AI;
+namespace Tualo\ConnectAI\AI;
 
 interface AIProvider
 {

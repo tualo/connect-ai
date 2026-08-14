@@ -1,11 +1,11 @@
-# Tualo Connect
+# Tualo Connect AI
 
 Eine generische PHP Library für die Verbindung zu verschiedenen AI-Providern und Datenquellen.
 
 ## Installation
 
 ```bash
-composer require tualo/connect
+composer require tualo/connect-ai
 ```
 
 ## Grundlagen
@@ -41,37 +41,37 @@ Das Projekt unterstützt folgende AI-Provider (alle OpenAI-kompatibel):
 
 require 'vendor/autoload.php';
 
-use Tualo\Connect\Connect;
-use Tualo\Connect\Registry;
+use Tualo\ConnectAI\Connect;
+use Tualo\ConnectAI\Registry;
 
 // Registry initialisieren
-$registry = Connect::Registry();
+$registry = ConnectAI::Registry();
 
 // AI-Provider registrieren
-$openai = new \Tualo\Connect\AI\OpenAI([
-    'apiKey' => 'sk-...',
-    'model' => 'gpt-4'
+$openai = new \Tualo\ConnectAI\AI\OpenAI([
+     'apiKey' => 'sk-...',
+     'model' => 'gpt-4'
 ]);
-Connect::register('openai', $openai);
+ConnectAI::register('openai', $openai);
 
 // Datenquelle registrieren
-$mysql = new \Tualo\Connect\DataSource\MySQL([
-    'host' => 'localhost',
-    'dbname' => 'meine_datenbank',
-    'username' => 'user',
-    'password' => 'pass'
+$mysql = new \Tualo\ConnectAI\DataSource\MySQL([
+     'host' => 'localhost',
+     'dbname' => 'meine_datenbank',
+     'username' => 'user',
+     'password' => 'pass'
 ]);
-Connect::register('mysql', $mysql);
+ConnectAI::register('mysql', $mysql);
 
 // AI aufrufen
-$response = Connect::ai('openai')->chat([
-    ['role' => 'user', 'content' => 'Hallo, wie geht es dir?']
+$response = ConnectAI::ai('openai')->chat([
+     ['role' => 'user', 'content' => 'Hallo, wie geht es dir?']
 ]);
 
 // Datenquelle verwenden
-$result = Connect::dataSource('mysql')->query(
-    'SELECT * FROM customers WHERE active = ?',
-    [1]
+$result = ConnectAI::dataSource('mysql')->query(
+     'SELECT * FROM customers WHERE active = ?',
+     [1]
 );
 ```
 
@@ -80,14 +80,14 @@ $result = Connect::dataSource('mysql')->query(
 Für komplexere Workflows kann die Pipeline-Klasse verwendet werden:
 
 ```php
-$connect = new \Tualo\Connect\Connect();
+$conn = new \Tualo\ConnectAI\Connect();
 
-$result = $connect
-    ->dataSource('mysql')
-    ->query('SELECT * FROM orders WHERE status = ?', ['shipped'])
-    ->ai('openai')
-    ->chat('Fasse diese Bestellungen zusammen.')
-    ->result();
+$result = $conn
+     ->dataSource('mysql')
+     ->query('SELECT * FROM orders WHERE status = ?', ['shipped'])
+     ->ai('openai')
+     ->chat('Fasse diese Bestellungen zusammen.')
+     ->result();
 ```
 
 ## Factory
@@ -95,13 +95,13 @@ $result = $connect
 Die Factory-Klasse erstellt Provider und Quellen dynamisch:
 
 ```php
-use Tualo\Connect\Factory;
+use Tualo\ConnectAI\Factory;
 
 // AI-Provider erstellen
-$ai = Factory::create('ai/openai', ['apiKey' => 'sk-...', 'model' => 'gpt-4']);
+$ai = FactoryAI::create('ai/openai', ['apiKey' => 'sk-...', 'model' => 'gpt-4']);
 
 // Datenquelle erstellen
-$db = Factory::create('ds/mysql', ['host' => 'localhost', 'dbname' => 'test']);
+$db = FactoryAI::create('ds/mysql', ['host' => 'localhost', 'dbname' => 'test']);
 ```
 
 ## Konfiguration
@@ -110,13 +110,13 @@ Konfiguration kann als Array, JSON oder Datei übergeben werden:
 
 ```php
 // Aus Array
-$config = \Tualo\Connect\Config::fromArray(['key' => 'value']);
+$config = \Tualo\ConnectAI\Config::fromArray(['key' => 'value']);
 
 // Aus JSON
-$config = \Tualo\Connect\Config::fromJson('{"key": "value"}');
+$config = \Tualo\ConnectAI\Config::fromJson('{"key": "value"}');
 
 // Aus Datei
-$config = \Tualo\Connect\Config::fromFile('config.json');
+$config = \Tualo\ConnectAI\Config::fromFile('config.json');
 ```
 
 ## Lizenz

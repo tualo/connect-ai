@@ -1,9 +1,9 @@
 <?php
 
-namespace Tualo\Connect\DataSource;
+namespace Tualo\ConnectAI\DataSource;
 
-use Tualo\Connect\DataSource\QueryResult;
-use Tualo\Connect\Exception\ConnectException;
+use Tualo\ConnectAI\DataSource\QueryResult;
+use Tualo\ConnectAI\Exception\ConnectException;
 
 class SOAP implements DataSource
 {

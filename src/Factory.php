@@ -2,7 +2,7 @@
 
 namespace Tualo\Connect;
 
-use Tualo\Connect\Exception\ConnectException;
+use Tualo\ConnectAI\Exception\ConnectException;
 
 class Factory
 {

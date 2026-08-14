@@ -2,9 +2,9 @@
 
 namespace Tualo\Connect;
 
-use Tualo\Connect\AI\AIProvider;
-use Tualo\Connect\DataSource\DataSource;
-use Tualo\Connect\Exception\ConnectException;
+use Tualo\ConnectAI\AI\AIProvider;
+use Tualo\ConnectAI\DataSource\DataSource;
+use Tualo\ConnectAI\Exception\ConnectException;
 
 class Connect
 {
