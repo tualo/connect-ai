@@ -1,6 +1,6 @@
 <?php
 
-namespace Tualo\Connect;
+namespace Tualo\ConnectAI;
 
 use Tualo\ConnectAI\Exception\ConnectException;
 
