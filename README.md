@@ -8,6 +8,10 @@ Eine generische PHP Library für die Verbindung zu verschiedenen AI-Providern un
 composer require tualo/connect-ai
 ```
 
+HTTP-Anfragen verwenden Guzzle `^8.3.1` mit Guzzle PSR-7 3.x und Promises 3.x.
+Bei eigenen Request-Optionen gelten die strengeren Typpruefungen von Guzzle 8:
+Headerwerte muessen Strings und Timeouts Zahlen sein.
+
 ## Grundlagen
 
 Das Projekt nutzt ein Registry-Pattern, um AI-Provider und Datenquellen zu verwalten.
